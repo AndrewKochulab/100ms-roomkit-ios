@@ -14,9 +14,9 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/100mslive/100ms-roomkit-models-ios", from: "1.13.2"),
+        .package(url: "https://github.com/AndrewKochulab/100ms-roomkit-models-ios", branch: "main"),
         .package(url: "https://github.com/100mslive/Popovers", from: "1.0.0"),
-        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.3.0"),
+        .package(url: "https://github.com/airbnb/lottie-spm.git", from: "4.5.1"),
         .package(url: "https://github.com/100mslive/100ms-noise-cancellation-models-ios", from: "1.0.0"),
     ],
     targets: [
