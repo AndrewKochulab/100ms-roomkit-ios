@@ -63,7 +63,7 @@ struct HMSPrebuiltDiagnosticsVideoStepView: View {
         HMSPrebuiltDiagnosticsBackgroundStepView(title: "Test Video", icon: "diag-camera") {
             VStack(spacing: 24) {
                 if let trackModel = model.trackModel {
-                    HMSTrackView(track: trackModel, contentMode: .scaleAspectFill, isZoomAndPanEnabled: false).frame(width: 146, height: 260).clipShape(RoundedRectangle(cornerRadius: 16))
+                    HMSTrackView(track: trackModel, contentMode: .scaleAspectFill, isZoomAndPanEnabled: false, mirroringEnabled: false).frame(width: 146, height: 260).clipShape(RoundedRectangle(cornerRadius: 16))
                         .overlay(alignment: .topTrailing) {
                             Image(assetName: "switch-camera-icon")
                                 .resizable()

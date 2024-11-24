@@ -16,12 +16,20 @@ public struct HMSPeerVideoTrackView: View {
     
     public var contentMode: UIView.ContentMode = .scaleAspectFill
     public var isZoomAndPanEnabled = false
+    public var mirroringEnabled = false
     public var isDegraded = false
     
-    public init(trackModel: HMSTrackModel, contentMode: UIView.ContentMode = .scaleAspectFill, isZoomAndPanEnabled: Bool = false, isDegraded: Bool = false) {
+    public init(
+        trackModel: HMSTrackModel,
+        contentMode: UIView.ContentMode = .scaleAspectFill,
+        isZoomAndPanEnabled: Bool = false,
+        mirroringEnabled: Bool = false,
+        isDegraded: Bool = false
+    ) {
         self.trackModel = trackModel
         self.contentMode = contentMode
         self.isZoomAndPanEnabled = isZoomAndPanEnabled
+        self.mirroringEnabled = mirroringEnabled
         self.isDegraded = isDegraded
     }
     
@@ -29,7 +37,13 @@ public struct HMSPeerVideoTrackView: View {
         Group {
 #if !Preview
             if !trackModel.isMute {
-                HMSTrackView(track: trackModel, contentMode: contentMode, isZoomAndPanEnabled: isZoomAndPanEnabled, unsubscribeWhenOffscreen: true)
+                HMSTrackView(
+                    track: trackModel,
+                    contentMode: contentMode,
+                    isZoomAndPanEnabled: isZoomAndPanEnabled,
+                    mirroringEnabled: mirroringEnabled,
+                    unsubscribeWhenOffscreen: true
+                )
             }
 #else
             Rectangle().foregroundStyle(.red)
